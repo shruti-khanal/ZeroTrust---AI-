@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Security Dashboard | ZeroTrust AI</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            ZeroTrust<span>AI</span>
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="access.html">
+                New Request
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main class="access-container">
+
+        <div class="page-heading">
+
+            <div class="badge">
+                SECURITY DASHBOARD
+            </div>
+
+            <h1>
+                Risk Analysis
+            </h1>
+
+            <p>
+                AI-based evaluation of the latest access request.
+            </p>
+
+        </div>
+
+
+        <!-- RESULT CARD -->
+
+        <section class="form-section">
+
+            <div id="riskResult">
+
+                <h2>
+                    Analyzing request...
+                </h2>
+
+            </div>
+
+        </section>
+
+
+        <!-- REQUEST DETAILS -->
+
+        <section class="form-section">
+
+            <h2>
+                Request Details
+            </h2>
+
+            <div
+                id="requestDetails"
+                class="form-grid"
+            >
+            </div>
+
+        </section>
+
+
+        <div class="submit-container">
+
+            <a
+                href="access.html"
+                class="primary-btn"
+            >
+                New Access Request
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        const storedData =
+            localStorage.getItem("riskResult");
+
+
+        if (!storedData) {
+
+            document.getElementById("riskResult").innerHTML = `
+                <h2>No access request found.</h2>
+                <p>Please create a new access request.</p>
+            `;
+
+        } else {
+
+            const data =
+                JSON.parse(storedData);
+
+
+            let statusClass = "";
+
+
+            if (data.riskLevel === "LOW") {
+
+                statusClass = "low";
+
+            } else if (data.riskLevel === "MEDIUM") {
+
+                statusClass = "medium";
+
+            } else {
+
+                statusClass = "high";
+
+            }
+
+
+            document.getElementById("riskResult").innerHTML = `
+
+                <div class="result-box ${statusClass}">
+
+                    <p>RISK SCORE</p>
+
+                    <strong>
+                        ${data.riskScore}/100
+                    </strong>
+
+                    <h2>
+                        ${data.riskLevel} RISK
+                    </h2>
+
+                    <h3>
+                        ${data.decision}
+                    </h3>
+
+                </div>
+
+            `;
+
+
+            document.getElementById("requestDetails").innerHTML = `
+
+                <div>
+                    <small>User ID</small>
+                    <p>${data.userId}</p>
+                </div>
+
+                <div>
+                    <small>Department</small>
+                    <p>${data.department}</p>
+                </div>
+
+                <div>
+                    <small>Role</small>
+                    <p>${data.role}</p>
+                </div>
+
+                <div>
+                    <small>Device</small>
+                    <p>${data.device}</p>
+                </div>
+
+                <div>
+                    <small>Operating System</small>
+                    <p>${data.os}</p>
+                </div>
+
+                <div>
+                    <small>Resource</small>
+                    <p>${data.resource}</p>
+                </div>
+
+                <div>
+                    <small>Sensitivity</small>
+                    <p>${data.sensitivity}</p>
+                </div>
+
+                <div>
+                    <small>Login Time</small>
+                    <p>${data.loginTime}</p>
+                </div>
+
+                <div>
+                    <small>Failed Attempts</small>
+                    <p>${data.failedAttempts}</p>
+                </div>
+
+                <div>
+                    <small>Previous Activity</small>
+                    <p>${data.activity}</p>
+                </div>
+
+                <div>
+                    <small>Location</small>
+                    <p>${data.location}</p>
+                </div>
+
+            `;
+
+        }
+
+    </script>
+
+</body>
+
+</html>
