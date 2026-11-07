@@ -1,1 +1,678 @@
+<!DOCTYPE html>
 
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>ZeroTrustAI - Graphic Era University</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+```
+
+</head>
+
+<body>
+
+<div class="container">
+
+```
+<!-- HEADER / HERO -->
+
+<header class="header">
+
+    <div class="header-content">
+
+        <div class="header-text">
+
+            <span class="header-badge">
+                GRAPHIC ERA UNIVERSITY
+            </span>
+
+            <h1>ZeroTrust<span>AI</span></h1>
+
+            <h2>Secure Access Portal</h2>
+
+            <p class="header-description">
+                Intelligent security. Smarter authentication.
+                Protected university access powered by AI.
+            </p>
+
+            <div class="header-features">
+                <span>✦ AI Risk Detection</span>
+                <span>✦ Secure Authentication</span>
+                <span>✦ Smart Access Control</span>
+            </div>
+
+        </div>
+
+        <div class="header-visual">
+
+            <div class="visual-circle circle-one"></div>
+            <div class="visual-circle circle-two"></div>
+
+            <div class="shield-card">
+
+                <div class="shield-icon">🛡️</div>
+
+                <h3>AI Protected</h3>
+
+                <p>Zero Trust Security</p>
+
+                <div class="security-status">
+                    <span class="status-dot"></span>
+                    System Protection Active
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- WELCOME SECTION -->
+
+<div class="welcome-section">
+
+    <div>
+        <span class="welcome-label">WELCOME TO YOUR SECURE CAMPUS</span>
+
+        <h2>Access starts with trust.</h2>
+
+        <p>
+            Create your account or sign in to access the university
+            portal through intelligent security verification.
+        </p>
+    </div>
+
+    <div class="welcome-mark">
+        <span>ZT</span>
+    </div>
+
+</div>
+
+
+<!-- AUTHENTICATION AREA -->
+
+<div class="auth-grid">
+
+
+    <!-- REGISTRATION -->
+
+    <section id="register-section" class="auth-card register-card">
+
+        <div class="auth-heading">
+
+            <div class="auth-icon">✦</div>
+
+            <div>
+                <span class="auth-label">GET STARTED</span>
+                <h2>Create Account</h2>
+                <p>Register to access the secure portal.</p>
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="registerName">Full Name</label>
+
+            <input
+                type="text"
+                id="registerName"
+                placeholder="Enter your full name"
+                autocomplete="name"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="registerUsername">Username</label>
+
+            <input
+                type="text"
+                id="registerUsername"
+                placeholder="Choose a username"
+                autocomplete="username"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="registerPassword">Password</label>
+
+            <input
+                type="password"
+                id="registerPassword"
+                placeholder="Create a password"
+                autocomplete="new-password"
+            >
+
+        </div>
+
+
+        <button id="registerButton" class="auth-button">
+            Create Account <span>→</span>
+        </button>
+
+
+        <p id="registerMessage" class="form-message"></p>
+
+
+        <div class="auth-footer">
+            <span class="footer-dot"></span>
+            Your information is protected by secure authentication.
+        </div>
+
+    </section>
+
+
+    <!-- LOGIN -->
+
+    <section id="login-section" class="auth-card login-card">
+
+        <div class="auth-heading">
+
+            <div class="auth-icon login-icon">↗</div>
+
+            <div>
+                <span class="auth-label">ALREADY REGISTERED?</span>
+                <h2>Welcome Back</h2>
+                <p>Sign in to continue to your account.</p>
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="loginUsername">Username</label>
+
+            <input
+                type="text"
+                id="loginUsername"
+                placeholder="Enter your username"
+                autocomplete="username"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="loginPassword">Password</label>
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+            >
+
+        </div>
+
+
+        <button id="loginButton" class="auth-button login-button">
+            Sign In <span>→</span>
+        </button>
+
+
+        <p id="loginMessage" class="form-message"></p>
+
+
+        <div class="automatic-attempts-box">
+
+            <div class="attempt-icon">🔐</div>
+
+            <div>
+                <h3>Login Security Monitoring</h3>
+
+                <p>Failed attempts are automatically monitored.</p>
+
+                <p id="login-attempt-status">
+                    Failed login attempts: 0 / 3
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="auth-footer">
+            <span class="footer-dot"></span>
+            Protected by ZeroTrustAI security.
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- ACCESS REQUEST -->
+
+<section id="access-section" style="display:none;">
+
+    <div class="section-heading">
+        <span class="section-label">SECURE AUTHENTICATION</span>
+        <h2>Access Request</h2>
+        <p>Submit your resource request for AI-based risk analysis.</p>
+    </div>
+
+
+    <label for="resource">Resource Name</label>
+
+    <input
+        type="text"
+        id="resource"
+        placeholder="Example: notes"
+    >
+
+
+    <label for="device">Device Type</label>
+
+    <select id="device">
+
+        <option value="Laptop">Laptop</option>
+        <option value="Desktop">Desktop</option>
+        <option value="Mobile">Mobile</option>
+
+    </select>
+
+
+    <div class="automatic-attempts-box">
+
+        <h3>Login Attempts</h3>
+
+        <p>Automatically calculated by the system.</p>
+
+        <p id="access-attempt-status">
+            Failed login attempts: 0 / 3
+        </p>
+
+    </div>
+
+
+    <div class="location-box">
+
+        <h3>Live Location</h3>
+
+        <p id="location-status">
+            Location will be captured when you request access.
+        </p>
+
+    </div>
+
+
+    <button id="requestAccess">
+        Request Access →
+    </button>
+
+
+    <div id="result" class="result"></div>
+
+</section>
+
+
+<!-- MEDIUM RISK VERIFICATION -->
+
+<section id="medium-verification-section" style="display:none;">
+
+    <div class="section-heading">
+        <span class="section-label">ADDITIONAL SECURITY</span>
+        <h2>Additional Verification</h2>
+    </div>
+
+    <p>
+        The AI detected medium access risk.
+    </p>
+
+    <p>
+        Additional verification is required before access can be approved.
+    </p>
+
+
+    <input
+        type="text"
+        id="mediumOtp"
+        maxlength="6"
+        placeholder="Enter 6-digit OTP"
+    >
+
+
+    <button id="verifyMediumOtp">
+        Verify Access →
+    </button>
+
+
+    <p id="medium-verification-message"></p>
+
+</section>
+
+
+<!-- GRAPHIC ERA UNIVERSITY DASHBOARD -->
+
+<section id="university-dashboard" style="display:none;">
+
+
+    <div class="university-header">
+
+        <h1>Graphic Era</h1>
+
+        <h2>Deemed to be University</h2>
+
+        <p>Student Academic Information Dashboard</p>
+
+    </div>
+
+
+    <div class="access-granted-message">
+
+        <h2>✓ Access Granted</h2>
+
+        <p>
+            Welcome to the Graphic Era University academic information portal.
+        </p>
+
+    </div>
+
+
+    <h2 class="dashboard-title">Explore Courses</h2>
+
+
+    <div class="course-grid">
+
+
+        <button class="course-card" data-course="bca">
+
+            <div class="course-icon">💻</div>
+
+            <h3>BCA</h3>
+
+            <p>Bachelor of Computer Applications</p>
+
+            <span>Click to view details →</span>
+
+        </button>
+
+
+        <button class="course-card" data-course="bba">
+
+            <div class="course-icon">📊</div>
+
+            <h3>BBA</h3>
+
+            <p>Bachelor of Business Administration</p>
+
+            <span>Click to view details →</span>
+
+        </button>
+
+
+        <button class="course-card" data-course="mca">
+
+            <div class="course-icon">🖥️</div>
+
+            <h3>MCA</h3>
+
+            <p>Master of Computer Applications</p>
+
+            <span>Click to view details →</span>
+
+        </button>
+
+
+        <button class="course-card" data-course="mba">
+
+            <div class="course-icon">📈</div>
+
+            <h3>MBA</h3>
+
+            <p>Master of Business Administration</p>
+
+            <span>Click to view details →</span>
+
+        </button>
+
+
+        <button class="course-card" data-course="bcom">
+
+            <div class="course-icon">💰</div>
+
+            <h3>B.Com</h3>
+
+            <p>Bachelor of Commerce</p>
+
+            <span>Click to view details →</span>
+
+        </button>
+
+
+    </div>
+
+
+    <!-- COURSE DETAILS -->
+
+    <div
+        id="course-details"
+        class="course-details"
+        style="display:none;"
+    >
+
+        <button id="backToCourses" class="back-button">
+            ← Back to Courses
+        </button>
+
+
+        <h2 id="course-title"></h2>
+
+        <p id="course-description"></p>
+
+
+        <div class="course-info-grid">
+
+
+            <div class="info-box">
+
+                <h3>🎓 Program</h3>
+
+                <p id="course-program"></p>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <h3>⏳ Duration</h3>
+
+                <p id="course-duration"></p>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <h3>📚 Main Subjects</h3>
+
+                <p id="course-subjects"></p>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <h3>💼 Career Options</h3>
+
+                <p id="course-careers"></p>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="course-section">
+
+            <h3>About This Course</h3>
+
+            <p id="course-about"></p>
+
+        </div>
+
+    </div>
+
+
+    <div class="university-footer">
+
+        <p>Graphic Era (Deemed to be University)</p>
+
+        <p>Dehradun, Uttarakhand</p>
+
+    </div>
+
+</section>
+
+
+<!-- SECURITY DASHBOARD -->
+
+<section>
+
+    <div class="section-heading">
+        <span class="section-label">SYSTEM MONITORING</span>
+        <h2>Security Dashboard</h2>
+    </div>
+
+
+    <button id="dashboardButton">
+        Open Security Dashboard
+    </button>
+
+
+    <div id="dashboard" style="display:none;">
+
+        <div class="dashboard-card">
+
+            <h3>Hash Table</h3>
+
+            <pre id="hashTable"></pre>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+            <h3>Access Graph</h3>
+
+            <pre id="accessGraph"></pre>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+            <h3>Priority Queue</h3>
+
+            <pre id="priorityQueue"></pre>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SECURITY ALERTS -->
+
+<section>
+
+    <div class="section-heading">
+        <span class="section-label">SECURITY MONITORING</span>
+        <h2>Security Alerts</h2>
+    </div>
+
+
+    <button id="alertsButton">
+        View Security Alerts
+    </button>
+
+
+    <div id="alerts"></div>
+
+</section>
+
+
+<!-- ACCESS HISTORY -->
+
+<section>
+
+    <div class="section-heading">
+        <span class="section-label">ACTIVITY RECORDS</span>
+        <h2>Access History</h2>
+    </div>
+
+
+    <button id="historyButton">
+        View Access History
+    </button>
+
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>User</th>
+                    <th>Resource</th>
+                    <th>Device</th>
+                    <th>Attempts</th>
+                    <th>Risk</th>
+                    <th>Score</th>
+                    <th>Decision</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                </tr>
+
+            </thead>
+
+
+            <tbody id="historyTable"></tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="main-footer">
+
+    <p>ZeroTrustAI · Intelligent Secure Access Portal</p>
+
+    <span>Graphic Era (Deemed to be University) · Dehradun</span>
+
+</footer>
+```
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
