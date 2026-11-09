@@ -6,9 +6,9 @@ from sklearn.tree import DecisionTreeClassifier
 # [failed_login_attempts, device_type, resource_sensitivity]
 #
 # Device:
-# 0 = Laptop
-# 1 = Desktop
-# 2 = Mobile
+# 0 = laptop
+# 1 = desktop
+# 2 = mobile
 #
 # Resource sensitivity:
 # 0 = Normal resource
