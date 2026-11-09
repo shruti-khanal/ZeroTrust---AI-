@@ -13,24 +13,15 @@ def create_database():
     cursor.execute("""
 
         CREATE TABLE IF NOT EXISTS access_requests (
-
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-
-            username TEXT,
-
-            device TEXT,
-
-            attempts INTEGER,
-
-            login_time INTEGER,
-
-            sensitivity TEXT,
-
-            latitude TEXT,
-
-            longitude TEXT,
-
-            risk TEXT
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT,
+        device TEXT,
+        attempts INTEGER,
+        login_time INTEGER,
+        sensitivity TEXT,
+        latitude TEXT,
+        longitude TEXT,
+        risk TEXT
 
         )
 
