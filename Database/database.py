@@ -365,5 +365,7 @@ def get_security_alerts():
 # ==================================================
 
 create_users_table()
+
 create_access_table()
+
 create_alerts_table()
