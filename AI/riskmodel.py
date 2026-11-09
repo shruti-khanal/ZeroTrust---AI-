@@ -110,4 +110,9 @@ def predict_risk(
     elif prediction == 1:
         return "MEDIUM"
 
+
     return "HIGH"
+
+
+
+
