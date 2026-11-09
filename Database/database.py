@@ -75,13 +75,11 @@ def authenticate_user(username, password):
     with get_connection() as connection:
 
         user = connection.execute("""
-            SELECT *
-            FROM users
+            SELECT * FROM users
             WHERE username = ?
         """, (username,)).fetchone()
 
         if user is None:
-
             return {
                 "success": False,
                 "message": "Invalid username or password.",
