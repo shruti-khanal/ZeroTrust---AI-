@@ -1,7 +1,6 @@
 import sqlite3
 from pathlib import Path
 
-# Database file stays in the same folder as database.py
 DATABASE = str(Path(__file__).resolve().with_name("zerotrust.db"))
 
 
