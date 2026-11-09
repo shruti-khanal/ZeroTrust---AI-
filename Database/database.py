@@ -8,6 +8,8 @@ def get_connection():
     connection = sqlite3.connect(DATABASE, timeout=10)
     connection.row_factory = sqlite3.Row
     return connection
+
+
 # ==================================================
 # CREATE / UPDATE USERS TABLE
 # =================================================
