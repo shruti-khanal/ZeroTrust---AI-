@@ -11,6 +11,7 @@ def create_database():
 
 
     cursor.execute("""
+    
 
         CREATE TABLE IF NOT EXISTS access_requests (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
